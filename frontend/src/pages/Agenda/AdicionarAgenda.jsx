@@ -119,7 +119,7 @@ export default function AdicionarAgenda({ handleCloseModal, setTableUpdateTrigge
                             <FormControl fullWidth>
                                 <SelectAutoComplete
                                     key={selectKey}
-                                    apiUrl="agendas"
+                                    apiUrl="agenda/por/user"
                                     label="Nome da agenda"
                                     onChange={(newValue) => setValue('agenda_id', newValue)}
                                 />

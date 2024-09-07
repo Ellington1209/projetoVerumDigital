@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Typography, IconButton, Toolbar, Box, Tooltip, Avatar, Menu, MenuItem, }from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Container, BoxAvatar } from "./Styles";
+import { Container, BoxAvatar, UserName } from "./Styles";
 import { styled } from "@mui/material/styles";
 import Sidebar from "../Sidebar/Sidebar";
 import MuiAppBar from "@mui/material/AppBar";
@@ -140,7 +140,7 @@ function AvatarAppBar(props) {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Configurações">
               <BoxAvatar>
-              <div className="name">{user.name || 'Usuário'}</div>
+              <UserName>{user.name || 'Usuário'}</UserName>
 
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                   <Avatar

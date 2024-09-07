@@ -15,9 +15,7 @@ const GlobalStyles = createGlobalStyle`
     width: 8px; /* Largura da barra de rolagem */
   }
 
-  ::-moz-scrollbar-thumb {
-    background-color: #1C2335 !important;
-  }
+
 
   /* Classe para remover bordas */
   * {

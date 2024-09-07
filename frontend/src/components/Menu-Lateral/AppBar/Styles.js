@@ -7,11 +7,9 @@ export const Container = styled.div`
     background-color:#2C003E;
   }
 
-.name{
-  color: ${grey[300]};
-  padding-left: 15px;
- ;
-}
+
+
+
   //SIDER BAR STYLES
   ${({ theme }) => css`
 
@@ -68,4 +66,9 @@ export const BoxAvatar = styled.div`
   height: 100%;
   align-items: center;
   justify-content: center;
+`;
+
+export const UserName = styled.div`
+color: ${grey[300]};
+padding-left: 15px;
 `;

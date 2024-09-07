@@ -25,8 +25,8 @@ export default function TabelaCompartilhado() {
       setLoading(true);
       dispatch(changeloading({ open: true, msg: 'carregando ...' }));
       const res = await Service.get('agenda/compartilhada');
-      dispatch(changeloading({ open: false }));
       setAgendas(res);  
+      dispatch(changeloading({ open: false }));
       setLoading(false);
     };
   
