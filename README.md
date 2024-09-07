@@ -129,5 +129,15 @@ JWT_SECRET=yDDgnM3YJZ6QU06nU5wObth2s3uekVtj1RXDus7tNVeyBkT0TdTw4IfbfSJi3HSh
 #### frontend
  http://localhost:4000
 
+### 9. Acessar o Sistema
+   ```
+ Usuario: ellington1209
+ senha: 123456
 
+  Usuario: Usuario1
+ senha: 123456
+
+  Usuario: Usuario2
+ senha: 123456
+ ```
  ### dev: Ellington Machado de Paula
