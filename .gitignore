@@ -14,4 +14,21 @@
 /.vscode
 *.log
 .env
+
+# Ignorar dados do MySQL
 api-laravel/.docker/mysql/dbdata/
+api-laravel/.docker/mysql/logs/
+api-laravel/.docker/mysql/tmp/
+
+# Ignorar diretórios de cache e logs do Laravel
+/api-laravel/storage/logs
+/api-laravel/storage/framework/cache
+/api-laravel/storage/framework/sessions
+/api-laravel/storage/framework/views
+/api-laravel/storage/debugbar
+
+# Ignorar arquivos temporários e de sistema
+*.swp
+*.swo
+*.tmp
+Thumbs.db
