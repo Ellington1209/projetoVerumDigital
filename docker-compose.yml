@@ -1,0 +1,75 @@
+version: '3'
+
+services:
+  # Backend Laravel
+  api:
+    build:
+      context: ./api-laravel
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./api-laravel:/var/www
+    networks:
+      - api-network
+
+  # Nginx para o Laravel
+  nginx:
+    container_name: servidor-nginx
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "8989:80"  # Porta para acessar o backend
+    volumes:
+      - ./api-laravel:/var/www
+      - ./api-laravel/docker/nginx:/etc/nginx/conf.d/
+    networks:
+      - api-network
+
+  # Banco de Dados MySQL
+  mysql:
+    container_name: banco-mysql
+    image: mysql:5.7.22
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+    volumes:
+      - ./api-laravel/.docker/mysql/dbdata:/var/lib/mysql
+    ports:
+      - "3388:3306"  # Porta para acessar o banco de dados
+    networks:
+      - api-network
+
+  # PhpMyAdmin (opcional)
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    links:
+      - mysql
+    restart: always
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "8899:80"  # Porta para acessar o PhpMyAdmin
+    networks:
+      - api-network
+
+ 
+  # Frontend React
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:3000"  # Mapeia a porta 3000 do contêiner para 4000 no host
+    networks:
+      - api-network
+
+
+
+networks:
+  api-network:
+    driver: bridge

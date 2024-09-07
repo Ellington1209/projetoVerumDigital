@@ -1,0 +1,15 @@
+# Ignorar diretórios de dependências
+/api-laravel/vendor
+/frontend/node_modules
+
+# Ignorar arquivos de build do React
+/frontend/build
+
+# Arquivos de ambiente
+/api-laravel/.env
+
+# Outros arquivos comuns a serem ignorados
+.DS_Store
+/.idea
+/.vscode
+*.log
