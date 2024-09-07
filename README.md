@@ -124,6 +124,12 @@ JWT_SECRET=yDDgnM3YJZ6QU06nU5wObth2s3uekVtj1RXDus7tNVeyBkT0TdTw4IfbfSJi3HSh
    ```
  php artisan key:generate
  ```
+ #### Ainda dentro do contêiner, rode as migrations e os seeders:
+
+   ```
+php artisan migrate --seed
+
+ ```
 
  ## 8. Acesse a aplicação
 #### frontend
